@@ -93,7 +93,7 @@ function Error() {
 
 function Success() {
   return (
-    <div className="flex gap-2">
+    <div className="flex items-center gap-2">
       <CheckCircle2 />
       <p>Sucesso !</p>
     </div>

@@ -31,7 +31,7 @@ function Thumbnail({
 }
 
 function Payment({ ...rest }: ComponentProps<"p">) {
-  return <p className="font-medium" {...rest} />;
+  return <p className="font-bold text-xl" {...rest} />;
 }
 
 function Input({ name, ...rest }: ComponentProps<"input">) {
