@@ -15,7 +15,7 @@ export default async function Pessoas() {
       </Link>
       <header className="flex flex-col items-center gap-6 my-6">
         <h1 className="text-red-500 font-bold text-6xl mb-4">Pessoas</h1>
-        <p className="text-lg">Selecione as pessoas</p>
+        <p className="text-xl">Selecione as pessoas</p>
       </header>
 
       <PessoaList pessoas={pessoas} />

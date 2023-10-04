@@ -12,18 +12,22 @@ function Root({ ...rest }: ComponentProps<"ul">) {
 }
 
 function Info({ ...rest }: ComponentProps<"div">) {
-  return <div className="flex gap-2 flex-1" {...rest} />;
+  return <div className="flex items-center gap-2 flex-1" {...rest} />;
 }
 
 function Name({ ...rest }: ComponentProps<"p">) {
-  return <p className="text-lg font-medium" {...rest} />;
+  return <p className="text-2xl font-medium" {...rest} />;
 }
 
 function Thumbnail({
   thumbnail,
   ...rest
 }: ComponentProps<"span"> & { thumbnail: string }) {
-  return <span {...rest}>{thumbnail}</span>;
+  return (
+    <span className="text-3xl" {...rest}>
+      {thumbnail}
+    </span>
+  );
 }
 
 function Payment({ ...rest }: ComponentProps<"p">) {

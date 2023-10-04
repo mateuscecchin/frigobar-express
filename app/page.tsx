@@ -12,7 +12,7 @@ export default async function Home() {
     <>
       <header className="flex flex-col items-center my-6">
         <h1 className="text-red-500 font-bold text-6xl mb-6">Produtos</h1>
-        <p className="text-lg text-center mx-4">Selecione os produtos</p>
+        <p className="text-xl text-center mx-4">Selecione os produtos</p>
       </header>
       <Produto>
         {data?.map((produto: any) => {

@@ -33,11 +33,11 @@ export function ProdutoItemInput({ children, produto, ...rest }: Props) {
         className="text-red-500 p-1 active:text-red-400"
         onClick={handleDecrement}
       >
-        <MinusIcon />
+        <MinusIcon className="w-10 h-10" />
       </button>
       <input
         type="number"
-        className="appearance-none outline-none w-10 text-center bg-white"
+        className="appearance-none outline-none w-12 text-2xl text-center bg-white"
         value={value}
         disabled
         {...rest}
@@ -48,7 +48,7 @@ export function ProdutoItemInput({ children, produto, ...rest }: Props) {
         className="text-red-500 p-1 active:text-red-400"
         onClick={handleIncrement}
       >
-        <PlusIcon />
+        <PlusIcon className="w-10 h-10" />
       </button>
     </div>
   );

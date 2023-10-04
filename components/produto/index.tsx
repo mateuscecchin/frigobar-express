@@ -24,7 +24,7 @@ function ItemThumbnail({
   ...rest
 }: ComponentProps<"span"> & { thumbnail: string }) {
   return (
-    <span className="text-xl" {...rest}>
+    <span className="text-3xl" {...rest}>
       {thumbnail}
     </span>
   );
@@ -37,8 +37,8 @@ function ItemDescription({ ...rest }: ComponentProps<"p">) {
 function ItemInfo({ description, price }: InfoProps) {
   return (
     <div className="flex flex-col flex-1">
-      <p className="font-semibold">{description}</p>
-      <span>{formatCurrencyBRL(price)}</span>
+      <p className="text-2xl font-semibold">{description}</p>
+      <span className="text-xl">{formatCurrencyBRL(price)}</span>
     </div>
   );
 }
