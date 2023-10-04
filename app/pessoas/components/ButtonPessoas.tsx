@@ -70,7 +70,11 @@ export function ButtonPessoas() {
   }, [error]);
 
   return (
-    <Button onClick={handleSubmit} disabled={error} data-success={success}>
+    <Button
+      onClick={handleSubmit}
+      disabled={error || success}
+      data-success={success}
+    >
       {error && <Error />}
       {!error && !success && <>Finalizar</>}
       {success && <Success />}
@@ -80,7 +84,7 @@ export function ButtonPessoas() {
 
 function Error() {
   return (
-    <div className="flex gap-2">
+    <div className="flex items-center gap-2">
       <AlertCircle />
       <p>Selecione uma pessoa</p>
     </div>
