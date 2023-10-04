@@ -1,14 +1,11 @@
 import { Produto } from "../components/produto";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { Divider } from "@/components/divider";
 import { ButtonProdutos } from "./components/ButtonProdutos";
-import { cookies } from "next/headers";
+import supabase from "@/utils/supabase";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const supabase = createServerComponentClient({ cookies });
-
   const { data } = await supabase.from("produto").select().eq("situacao_id", 1);
 
   return (
@@ -22,7 +19,6 @@ export default async function Home() {
           return (
             <Produto.Item key={produto.id} produtoId={produto.id}>
               <Produto.ItemThumbnail thumbnail={produto.imagem_url} />
-
               <Produto.ItemInfo
                 description={produto.descricao}
                 price={produto.valor}

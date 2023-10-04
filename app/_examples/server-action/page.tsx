@@ -1,6 +1,5 @@
 // TODO: Duplicate or move this file outside the `_examples` folder to make it a route
 
-import { getCookieData } from "@/utils/cookie";
 import { createServerActionClient } from "@supabase/auth-helpers-nextjs";
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";

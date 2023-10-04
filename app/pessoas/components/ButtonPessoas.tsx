@@ -2,16 +2,12 @@
 
 import { Button } from "@/components/button";
 import { useCarrinho, useProdutosPreco } from "@/store/carrinho";
-import { createClient } from "@supabase/supabase-js";
+import supabase from "@/utils/supabase";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export function ButtonPessoas() {
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
   const router = useRouter();
 
   const [error, setError] = useState(false);
