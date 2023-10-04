@@ -11,7 +11,12 @@ interface InfoProps {
 }
 
 function Root({ ...rest }: ComponentProps<"ul">) {
-  return <ul className="space-y-4" {...rest} />;
+  return (
+    <ul
+      className="flex flex-col flex-1 max-h-[650px] space-y-4 overflow-y-auto"
+      {...rest}
+    />
+  );
 }
 
 function ItemThumbnail({

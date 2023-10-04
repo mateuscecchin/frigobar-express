@@ -12,7 +12,7 @@ export function PessoaSummary() {
   );
 
   return (
-    <div className="flex flex-1 justify-center">
+    <div className="flex justify-center">
       <span className="text-4xl font-semibold">
         Total: {formatCurrencyBRL(produtosTotal)}
       </span>

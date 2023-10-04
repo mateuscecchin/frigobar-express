@@ -32,7 +32,7 @@ export function ButtonProdutos() {
   return (
     <Button onClick={handleNext} disabled={error}>
       {error && (
-        <div className="flex gap-2 justify-center w-full">
+        <div className="flex gap-2 items-center justify-center w-full">
           <AlertCircle />
           <p>Selecione um produto</p>
         </div>

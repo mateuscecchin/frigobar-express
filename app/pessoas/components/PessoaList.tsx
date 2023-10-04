@@ -38,8 +38,8 @@ export function PessoaList({ pessoas }: { pessoas: any }) {
             </Pessoa.Item>
           );
         })}
-        <Pessoa.Summary />
       </Pessoa>
+      <Pessoa.Summary />
       <Divider />
       <ButtonPessoas />
     </>

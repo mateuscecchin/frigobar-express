@@ -3,7 +3,12 @@ import { PessoaItem } from "./pessoa-item";
 import { PessoaSummary } from "./pessoa-summary";
 
 function Root({ ...rest }: ComponentProps<"ul">) {
-  return <ul className="flex flex-col gap-4" {...rest} />;
+  return (
+    <ul
+      className="flex flex-1 max-h-[650px] flex-col overflow-y-auto mb-3"
+      {...rest}
+    />
+  );
 }
 
 function Info({ ...rest }: ComponentProps<"div">) {
