@@ -2,12 +2,11 @@ import { Produto } from "../components/produto";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { Divider } from "@/components/divider";
 import { ButtonProdutos } from "./components/ButtonProdutos";
-import { getCookieData } from "@/utils/cookie";
+import { cookies } from "next/headers";
 
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const cookies = await getCookieData();
   const supabase = createServerComponentClient({ cookies });
 
   const { data } = await supabase.from("produto").select().eq("situacao_id", 1);

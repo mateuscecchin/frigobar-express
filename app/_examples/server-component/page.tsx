@@ -2,11 +2,11 @@
 
 import { getCookieData } from "@/utils/cookie";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
 
 export const dynamic = "force-dynamic";
 
 export default async function ServerComponent() {
-  const cookies = await getCookieData();
   // Create a Supabase client configured to use cookies
   const supabase = createServerComponentClient({ cookies });
 

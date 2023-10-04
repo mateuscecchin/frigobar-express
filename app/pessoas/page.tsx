@@ -2,11 +2,9 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
 import { PessoaList } from "./components/PessoaList";
-import { getCookieData } from "@/utils/cookie";
+import { cookies } from "next/headers";
 
 export default async function Pessoas() {
-  const cookies = await getCookieData();
-
   const supabase = createServerComponentClient({ cookies });
 
   const { data: pessoas } = await supabase.from("pessoa").select();
