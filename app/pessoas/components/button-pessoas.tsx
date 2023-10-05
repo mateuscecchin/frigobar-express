@@ -9,7 +9,6 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export function ButtonPessoas() {
-  const router = useRouter();
   const [success, setSuccess] = useState(false);
 
   const [error, setError] = useState(false);
