@@ -1,8 +1,4 @@
-import "./globals.css";
-
-export const metadata = {
-  title: "Frigobar Express",
-};
+import "../globals.css";
 
 export default function RootLayout({
   children,
@@ -11,8 +7,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <main className="min-h-screen bg-background flex flex-col items-center">
+      <body id="fullscreen">
+        <main className="min-h-screen bg-white flex flex-col items-center">
           <div className="flex flex-col max-w-lg flex-1 w-full p-6">
             {children}
           </div>

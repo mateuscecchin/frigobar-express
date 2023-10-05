@@ -1,9 +1,8 @@
-import { Produto } from "../components/produto";
 import { Divider } from "@/components/divider";
-import { ButtonProdutos } from "./components/button-produtos";
+import { Produto } from "@/components/produto";
 import supabase from "@/utils/supabase";
-
-export const dynamic = "force-dynamic";
+import { ButtonProdutos } from "./components/button-produtos";
+import { FullScreen } from "./components/full-screen";
 
 export default async function Home() {
   const { data } = await supabase.from("produto").select().eq("situacao_id", 1);
@@ -14,6 +13,7 @@ export default async function Home() {
         <h1 className="text-red-500 font-bold text-6xl mb-6">Produtos</h1>
         <p className="text-xl text-center mx-4">Selecione os produtos</p>
       </header>
+      <FullScreen />
       <Produto>
         {data?.map((produto: any) => {
           return (

@@ -5,7 +5,7 @@ import { PessoaSummary } from "./pessoa-summary";
 function Root({ ...rest }: ComponentProps<"ul">) {
   return (
     <ul
-      className="flex flex-1 max-h-[650px] flex-col overflow-y-auto mb-3"
+      className="flex flex-1 max-h-[600px] flex-col overflow-y-auto mb-3"
       {...rest}
     />
   );
@@ -24,8 +24,8 @@ function Thumbnail({
   ...rest
 }: ComponentProps<"span"> & { thumbnail: string }) {
   return (
-    <span className="text-3xl" {...rest}>
-      {thumbnail}
+    <span className="text-3xl mr-2" {...rest}>
+      {thumbnail ?? "👤"}
     </span>
   );
 }

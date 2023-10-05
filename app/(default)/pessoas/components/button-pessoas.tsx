@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/button";
-import { Sucesso } from "@/components/sucesso/page";
+import { Sucesso } from "@/components/sucesso";
 import { useCarrinho, useProdutosPreco } from "@/store/carrinho";
 import supabase from "@/utils/supabase";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
@@ -10,9 +10,9 @@ import { useEffect, useState } from "react";
 
 export function ButtonPessoas() {
   const router = useRouter();
+  const [success, setSuccess] = useState(false);
 
   const [error, setError] = useState(false);
-  const [success, setSuccess] = useState(false);
 
   const pessoasSelecionadas = useCarrinho((state) => state.pessoas);
   const produtos = useCarrinho((state) => state.produtos);
@@ -57,11 +57,7 @@ export function ButtonPessoas() {
 
     setSuccess(true);
 
-    await new Promise(() =>
-      setTimeout(() => {
-        reset();
-      }, 1500)
-    );
+    reset();
   }
 
   useEffect(() => {
@@ -75,11 +71,7 @@ export function ButtonPessoas() {
   if (success) return <Sucesso />;
 
   return (
-    <Button
-      onClick={handleSubmit}
-      disabled={error || success}
-      data-success={success}
-    >
+    <Button onClick={handleSubmit} disabled={error}>
       {error && <Error />}
       {!error && <>Concluir</>}
     </Button>
