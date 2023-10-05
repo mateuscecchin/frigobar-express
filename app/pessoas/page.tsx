@@ -3,6 +3,8 @@ import Link from "next/link";
 import { PessoaList } from "./components/pessoa-list";
 import supabase from "@/utils/supabase";
 
+export const dynamic = "force-dynamic";
+
 export default async function Pessoas() {
   const { data: pessoas } = await supabase.from("pessoa").select();
 
