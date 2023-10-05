@@ -1,6 +1,6 @@
 import { Produto } from "../components/produto";
 import { Divider } from "@/components/divider";
-import { ButtonProdutos } from "./components/ButtonProdutos";
+import { ButtonProdutos } from "./components/button-produtos";
 import supabase from "@/utils/supabase";
 
 export const dynamic = "force-dynamic";

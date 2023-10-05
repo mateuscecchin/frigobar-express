@@ -1,6 +1,6 @@
 import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
-import { PessoaList } from "./components/PessoaList";
+import { PessoaList } from "./components/pessoa-list";
 import supabase from "@/utils/supabase";
 
 export default async function Pessoas() {

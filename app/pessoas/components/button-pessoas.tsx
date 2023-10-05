@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/button";
+import { Sucesso } from "@/components/sucesso/page";
 import { useCarrinho, useProdutosPreco } from "@/store/carrinho";
 import supabase from "@/utils/supabase";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
@@ -25,38 +26,40 @@ export function ButtonPessoas() {
       setError(true);
       return;
     }
+    try {
+      pessoasSelecionadas.forEach(async (pes) => {
+        const resVenda = await supabase
+          .from("venda")
+          .insert({
+            pessoa_id: pes.id,
+            valor: valorFormatted,
 
-    pessoasSelecionadas.forEach(async (pes) => {
-      const resVenda = await supabase
-        .from("venda")
-        .insert({
-          pessoa_id: pes.id,
-          valor: valorFormatted,
+            situacao_id: 4,
+          })
+          .select();
 
-          situacao_id: 4,
-        })
-        .select();
+        const venda = resVenda.data?.[0];
 
-      const venda = resVenda.data?.[0];
+        produtos.forEach(async (prod) => {
+          const quantidade = prod.quantidade / pessoasSelecionadas.length;
 
-      produtos.forEach(async (prod) => {
-        const quantidade = prod.quantidade / pessoasSelecionadas.length;
-
-        await supabase.from("venda_item").insert({
-          produto_id: prod.id,
-          valor: prod.valor * quantidade,
-          quantidade,
-          venda_id: venda.id,
+          await supabase.from("venda_item").insert({
+            produto_id: prod.id,
+            valor: prod.valor * quantidade,
+            quantidade,
+            venda_id: venda.id,
+          });
         });
       });
-    });
+    } catch (err) {
+      setError(true);
+    }
 
     setSuccess(true);
 
     await new Promise(() =>
       setTimeout(() => {
         reset();
-        router.back();
       }, 1500)
     );
   }
@@ -69,6 +72,8 @@ export function ButtonPessoas() {
     }, 1500);
   }, [error]);
 
+  if (success) return <Sucesso />;
+
   return (
     <Button
       onClick={handleSubmit}
@@ -76,26 +81,16 @@ export function ButtonPessoas() {
       data-success={success}
     >
       {error && <Error />}
-      {!error && !success && <>Finalizar</>}
-      {success && <Success />}
+      {!error && <>Concluir</>}
     </Button>
   );
 }
 
 function Error() {
   return (
-    <div className="flex items-center gap-2">
-      <AlertCircle />
+    <div className="flex items-center">
+      <AlertCircle className="mr-4" />
       <p>Selecione uma pessoa</p>
-    </div>
-  );
-}
-
-function Success() {
-  return (
-    <div className="flex items-center gap-2">
-      <CheckCircle2 />
-      <p>Sucesso !</p>
     </div>
   );
 }

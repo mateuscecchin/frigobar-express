@@ -11,7 +11,7 @@
 }
 
 .shake:disabled {
-  animation: shake 0.5s ease-in-out infinite;
+  animation: shake 1s ease-in-out infinite;
 }
 
 @keyframes shake {

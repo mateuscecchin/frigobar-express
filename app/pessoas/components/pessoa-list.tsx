@@ -4,7 +4,7 @@ import { Divider } from "@/components/divider";
 import { Pessoa } from "@/components/pessoa";
 import { useCarrinho, useProdutosPreco } from "@/store/carrinho";
 import { formatCurrencyBRL } from "@/utils/currency";
-import { ButtonPessoas } from "./ButtonPessoas";
+import { ButtonPessoas } from "./button-pessoas";
 
 export function PessoaList({ pessoas }: { pessoas: any }) {
   const pessoasSelecionadas = useCarrinho((state) => state.pessoas);
