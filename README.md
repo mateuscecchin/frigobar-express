@@ -2,23 +2,23 @@
 
 ## Features 
 
-[x] - Adicionar autenticacao
+[X] - Adicionar autenticacao
 
-[x] - Venda dividida (para duas pessoas)
+[X] - Venda dividida (para duas pessoas)
 
-[x] - Botao para deixar Full screen
+[X] - Botao para deixar Full screen
 
-[] - Pesquisar pessoa
+[ ] - Pesquisar pessoa
 
-[] - Adicionar categorias (Mais vendido, produtos novos, salgados, doces...)
+[ ] - Adicionar categorias (Mais vendido, produtos novos, salgados, doces...)
 
-[] - Enviar cobranca ao whatsapp da pessoa todo dia 5 com uma tabela de itens consumidos e o valor a pagar
+[ ] - Enviar cobranca ao whatsapp da pessoa todo dia 5 com uma tabela de itens consumidos e o valor a pagar
 
-[] - Tela de cadastrar produto (Apenas admin)
+[ ] - Tela de cadastrar produto (Apenas admin)
 
-[] - Tela de cadastrar pessoa (Apenas admin)
+[ ] - Tela de cadastrar pessoa (Apenas admin)
 
-[] - Tela de visualizar pessoas que estao devendo e suas devidas quantias
+[ ] - Tela de visualizar pessoas que estao devendo e suas devidas quantias
 
 ## Explicacoes de coisas, caso eu esqueca e nao tome um susto quando ver em codigo
 
