@@ -1,3 +1,19 @@
+# 🍫 Frigobar Express
+
+## Features 
+
+[x] - Adicionar autenticacao
+[x] - Venda dividida (para duas pessoas)
+[x] - Botao para deixar Full screen
+[] - Pesquisar pessoa
+[] - Adicionar categorias (Mais vendido, produtos novos, salgados, doces...)
+[] - Enviar cobranca ao whatsapp da pessoa todo dia 5 com uma tabela de itens consumidos e o valor a pagar
+[] - Tela de cadastrar produto (Apenas admin)
+[] - Tela de cadastrar pessoa (Apenas admin)
+[] - Tela de visualizar pessoas que estao devendo e suas devidas quantias
+
+## Explicacoes de coisas, caso eu esqueca e nao tome um susto quando ver em codigo
+
 ### Funcao getCookieData criada a partir de erro gerado no build;
 
 - Gerencie contextos de execução corretamente: operações JavaScript como setTimeout, setInterval, manipuladores de eventos e promessas criam novos contextos de execução. Você precisa manter o contexto assíncrono ao usar essas operações. Algumas estratégias incluem:
